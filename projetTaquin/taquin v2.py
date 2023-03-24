@@ -2,7 +2,7 @@ import tkinter as tk
 import random
 
 class Taquin(tk.Frame):
-    def __init__(self, parent, nb_lignes=int (4) ,nb_colonnes=4,size=32):
+    def __init__(self, parent, nb_lignes=4 ,nb_colonnes=4,size=32):
         self.nb_lignes = nb_lignes
         self.nb_colonnes = nb_colonnes
         self.size = size
