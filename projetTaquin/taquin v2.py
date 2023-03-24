@@ -2,7 +2,7 @@ import tkinter as tk
 import random
 
 class Taquin(tk.Frame):
-    def __init__(self,parent,nb_lignes=4,nb_colonnes=4,size=32):
+    def __init__(self, parent, nb_lignes=int (4) ,nb_colonnes=4,size=32):
         self.nb_lignes = nb_lignes
         self.nb_colonnes = nb_colonnes
         self.size = size
@@ -15,8 +15,7 @@ class Taquin(tk.Frame):
         self.canvas_height = nb_lignes * size
          
         tk.Frame.__init__(self, parent)
-        self.canvas = tk.Canvas(self, borderwidth=0, highlightthickness=0,/
-                                width=self.canvas_width, height=self.canvas_height, background="white")
+        self.canvas = tk.Canvas(self, borderwidth=0, highlightthickness=0,width=self.canvas_width, height=self.canvas_height, background="white")
         self.canvas.pack(side="top", fill="both", expand=True, padx=2, pady=2)
         self.canvas.bind("<Button-1>", self.click)
         self.init_board()
@@ -38,3 +37,5 @@ class Taquin(tk.Frame):
                 self.tiles.append(tile_label)
                 self.tiles_pos[tile_number] = (nb_lignes, nb_colonnes)
         self.empty_pos = self.tiles_pos[self.nb_lignes * self.nb_colonnes]
+# 1er def initialisation des cases (dimensions,nombre de colonnes et ligns etc)
+# 2eme def initialisation du plateau de jeu 
