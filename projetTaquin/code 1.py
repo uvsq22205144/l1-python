@@ -37,22 +37,12 @@ def find_empty(board):
 
 # Mélange des cases du plateau + création du bouton pour mélanger 
 def shuffle_board():
-    empty_row, empty_col = find_empty(board)
-    moves = ["up", "down", "left", "right"]
-    random.shuffle(moves)
-    for move in moves:
-        new_row, new_col = empty_row, empty_col
-        if move == "up":
-            new_row -= 1
-        elif move == "down":
-            new_row += 1
-        elif move == "left":
-            new_col -= 1
-        elif move == "right":
-            new_col += 1
-        if new_row >= 0 and new_row < len(board) and new_col >= 0 and new_col < len(board[0]):
-            board[empty_row][empty_col], board[new_row][new_col] = board[new_row][new_col], board[empty_row][empty_col]
-            empty_row, empty_col = new_row, new_col
+    global board
+    last_element = board[-1]  # Extraire le dernier élément
+    shuffled = board[:-1]  # Copier la liste sans le dernier élément
+    random.shuffle(shuffled)  # Mélanger la liste sans le dernier élément
+    shuffled.append(last_element)  # Insérer le dernier élément à sa place
+    board = shuffled
     create_board()
 
 shuffle_button = Button(root, text="Mélanger", command=shuffle_board)
@@ -61,3 +51,4 @@ shuffle_button.pack()
 create_board()
 root.mainloop()
 
+ 
