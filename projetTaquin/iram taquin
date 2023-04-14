@@ -1,11 +1,5 @@
 # L1-pytho
 
-## Madani fouatih iram 
-### projet IN 202 
-#### taquin
-##### https://github.com/iramyas/L1-pytho.git
-
-### code ###
 
 import tkinter as tk 
 
@@ -69,7 +63,7 @@ def get_tile(row, col):
     return board[row][col]
 
 def set_tile(row, col, value):
-    """Set the tile value at the given position"""
+    """mettre la valeur de la position """
     board[row][col] = value
 
 
