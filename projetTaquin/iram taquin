@@ -1,0 +1,136 @@
+# L1-pytho
+
+## Madani fouatih iram 
+### projet IN 202 
+#### taquin
+##### https://github.com/iramyas/L1-pytho.git
+
+### code ###
+
+import tkinter as tk 
+
+import random 
+
+
+
+
+root= tk.Tk()
+
+
+root.geometry("500x500")
+root.title("my taquin")
+t=4
+empty_pos=(t-1,t-1)
+board = [[1,2,3,4],
+         [5,6,7,8],
+         [9,10,11,12],
+         [13,14,15,0]]
+
+
+canvas_width=400
+canvas_height=400
+can=tk.Canvas( width=canvas_width,height=canvas_height,bg='white')
+can.pack(padx =20, pady =20)
+root['bg']='gray'
+
+
+
+""""
+def lines(can, t):
+    for x in range(t, canvas_width,t):
+        can.create_line(x,0,x, canvas_height,fill="#8f4282" )
+    for y in range(t,canvas_height,t):
+        can.create_line(0,y,canvas_width,y, fill="#8f4282")
+can.grid()
+
+"""
+
+element=[None for i in range (17)]
+
+
+
+for i in range(4):
+    for j in range(4):
+        x, y=100*j, 100*i
+        A, B, C=(x, y), (x+100, y+100), (x+50, y+50)
+        REC=can.create_rectangle(A, B, fill="#8f4282", width= 5)
+        texte=can.create_text(C, text=board[i][j], fill="black")
+#        random.shuffle(texte)
+        place=board[i][j]
+        element[place]=(REC, texte) # type: ignore
+
+can.delete(REC)  # type: ignore
+can.delete(texte)   # type: ignore
+
+# identifier les tuiles
+
+def get_tile(row, col):
+    """Get the tile value at the given position"""
+    return board[row][col]
+
+def set_tile(row, col, value):
+    """Set the tile value at the given position"""
+    board[row][col] = value
+
+
+
+def is_valid_move(row,col):
+    global empty_pos
+    if row < 0 or row >= t or col < 0 or col >= t:
+        return False  # Out of bounds
+    if (row == empty_pos[0] and abs(col - empty_pos[1]) == 1) or \
+       (col == empty_pos[1] and abs(row - empty_pos[0]) == 1):
+        return True  # Adjacent to empty tile
+    return False
+
+def move_tile(row, col):
+    """Move the tile to the empty position"""
+    global empty_pos
+    if is_valid_move(row, col):
+        # Swap the tiles
+        set_tile(empty_pos[0], empty_pos[1], get_tile(row, col))
+        set_tile(row, col, 0)
+        empty_pos = (row, col)
+
+
+def solve():
+
+    global s 
+
+    return solve
+
+
+def recuperation(): 
+    return recuperation
+
+def melanger ():
+    return melanger 
+
+def retour ():
+    return retour 
+
+def save():
+    return save
+global puzzl , s 
+
+puzzl=(board,can)
+
+btn1=tk.Button(text='shake',command=melanger)
+#btn2=tk.Button(text='resoudre',command=solve)
+btn3=tk.Button(text='recuperation',command=retour)
+
+#btn4=tk.Button(text='sauvgarder', command= save)
+btn5=tk.Button(text='Retour',command=retour)
+
+btn1.place(x=20,y=450)
+#btn2.place(x=100,y=450)
+btn3.place(x=200,y=450)
+#btn4.place(x=320,y=450)
+btn5.place(x=440,y=450)
+
+#can.pack()
+# board.pack()
+root.mainloop()
+
+
+# on peut creer des images dans le canvas qui peuvent bouger 
