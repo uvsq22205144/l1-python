@@ -1,6 +1,5 @@
 import tkinter as tk
 import random
-import pickle
 
 # Création de la fenêtre principale
 root = tk.Tk()
