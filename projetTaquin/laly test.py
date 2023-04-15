@@ -64,7 +64,7 @@ def move_tile(event):
     create_board()
 
 
-shuffle_button = tk.Button(root, text="Mélanger", command=shuffle_board)
+shuffle_button = tk.Button(root, text="Mélanger", command=shuffle_board, bg ="DarkOrchid1")
 shuffle_button.pack()
 cnv.bind("<Button-1>", move_tile)
 create_board()
