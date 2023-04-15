@@ -33,6 +33,17 @@ def create_board():
             else:
                 cnv.create_rectangle(A, B, fill="gray85")
 
+#Fonction pour mélanger le plateau
+def shuffle_board():
+    global board, moves
+    last_element = board[-1]  # Extraire le dernier élément
+    shuffled = board[:-1]  # Copier la liste sans le dernier élément
+    random.shuffle(shuffled)  # Mélanger la liste sans le dernier élément
+    shuffled.append(last_element)  # Insérer le dernier élément à sa place
+    board = shuffled
+    moves = 0
+    create_board()
+
 # Fonction pour déplacer une case
 def move_tile(event):
     global moves
@@ -53,6 +64,8 @@ def move_tile(event):
     create_board()
 
 
+shuffle_button = tk.Button(root, text="Mélanger", command=shuffle_board)
+shuffle_button.pack()
 cnv.bind("<Button-1>", move_tile)
 create_board()
 root.mainloop()
