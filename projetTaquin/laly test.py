@@ -1,5 +1,6 @@
 import tkinter as tk
 import random
+import pickle
 
 # Création de la fenêtre principale
 root = tk.Tk()
@@ -7,7 +8,7 @@ root.title("Jeu du Taquin")
 
 # Définition du plateau de jeu
 board = [[6, 7, 4, 8], [5, 15, 13, 2], [12, 14, 9, 1], [3, 11, 10, None]]
-
+win = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, None]]
 moves = 0
 misplaced = 0
 
@@ -16,6 +17,19 @@ cnv = tk.Canvas(root, width=400, height=400)
 cnv.pack()
 
 moves_history=[]
+
+# Fonction pour savoir si le jeu est résolvable
+def is_solvable(board):
+    flat_board = [item for sublist in board for item in sublist]
+    inversion_count = 0
+    for i in range(len(flat_board)):
+        for j in range(i+1, len(flat_board)):
+            if flat_board[i] and flat_board[j] and flat_board[i] > flat_board[j]:
+                inversion_count += 1
+    if inversion_count % 2 == 0:
+        return True
+    else:
+        return False
 
 # Fonction pour créer le plateau de jeu
 def create_board():
@@ -57,6 +71,11 @@ def undo_move():
 #Fonction pour mélanger le plateau
 def shuffle_board():
     global board, moves
+    if not is_solvable(board):
+        print("Le plateau est insolvable !")
+        return
+    else :
+        print("Tu peux jouer ! Le plateau est résolvable")
     # Enlever la case vide
     empty_pos = None
     for i in range(len(board)):
@@ -103,8 +122,7 @@ def move_tile(event):
     moves_history.append([row[:] for row in board])  # Copier une nouvelle liste de board dans moves_history
     create_board()
 
-
-
+        
 
 shuffle_button = tk.Button(root, text="Mélanger", command=shuffle_board, bg ="DarkOrchid1") #bouton pour melanger
 shuffle_button.pack()
