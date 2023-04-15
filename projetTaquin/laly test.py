@@ -57,13 +57,31 @@ def undo_move():
 #Fonction pour mélanger le plateau
 def shuffle_board():
     global board, moves
-    last_element = board[-1]  # Extraire le dernier élément
-    shuffled = board[:-1]  # Copier la liste sans le dernier élément
-    random.shuffle(shuffled)  # Mélanger la liste sans le dernier élément
-    shuffled.append(last_element)  # Insérer le dernier élément à sa place
-    board = shuffled
+    # Enlever la case vide
+    empty_pos = None
+    for i in range(len(board)):
+        for j in range(len(board[0])):
+            if board[i][j] is None:
+                empty_pos = (i, j)
+                break
+        if empty_pos:
+            break
+    # Enlever la dernière case (15)
+    last_element = board[3][3]
+    shuffled = [board[i][j] for i in range(4) for j in range(4) if (i, j) != empty_pos]
+    # Mélanger la liste
+    random.shuffle(shuffled)
+    index = 0
+    for i in range(4):
+        for j in range(4):
+            if (i, j) != empty_pos:
+                board[i][j] = shuffled[index]
+                index += 1
+    # Remettre la case vide
+    board[3][3] = last_element
     moves = 0
     create_board()
+
 
 # Fonction pour déplacer une case
 def move_tile(event):
