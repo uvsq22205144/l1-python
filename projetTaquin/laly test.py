@@ -72,10 +72,11 @@ def undo_move():
 def shuffle_board():
     global board, moves
     if not is_solvable(board):
-        print("Le plateau est insolvable !")
+        log_text.insert(tk.END, "Le plateau est insolvable !\n")
         return
     else :
-        print("Tu peux jouer ! Le plateau est résolvable")
+        log_text.insert(tk.END, "Tu peux jouer ! Le plateau est résolvable\n")
+        
     # Enlever la case vide
     empty_pos = None
     for i in range(len(board)):
@@ -129,6 +130,8 @@ shuffle_button.pack()
 cnv.bind("<Button-1>", move_tile) #bouton qui reconnait le clic de la souris 
 undo_button = tk.Button(root, text="Annuler", command=undo_move, bg="DarkOrchid1")# bouton pour annuler
 undo_button.pack()
+log_text = tk.Text(root, width=50, height=5)
+log_text.pack()
 
 create_board()
 root.mainloop()
