@@ -15,9 +15,12 @@ misplaced = 0
 cnv = tk.Canvas(root, width=400, height=400)
 cnv.pack()
 
+moves_history=[]
+
 # Fonction pour créer le plateau de jeu
 def create_board():
-    global misplaced
+    global misplaced, board, moves_history
+    
     cnv.delete(tk.ALL) # Effacer le canvas existant
     FONT = ('Arial', 27, 'bold')
     misplaced = 0
@@ -32,6 +35,24 @@ def create_board():
                     misplaced += 1
             else:
                 cnv.create_rectangle(A, B, fill="gray85")
+    if len(moves_history) == 0:
+        moves_history.append([row[:] for row in board]) # Ajout de l'état initial de la planche
+
+# Fonction pour annuler le dernier mouvement
+def undo_move():
+    global board, moves, moves_history
+    
+    if moves == 0 or len(moves_history) < 2:
+        print("Aucun mouvement à annuler")
+        return
+    print("Annulation du dernier mouvement")
+    
+    last_state = moves_history[-2]
+    board = [row[:] for row in last_state]
+    moves_history.pop(-1)
+    moves -= 1
+    create_board()
+
 
 #Fonction pour mélanger le plateau
 def shuffle_board():
@@ -61,11 +82,17 @@ def move_tile(event):
     elif j > 0 and board[i][j-1] is None:
         board[i][j-1], board[i][j] = board[i][j], board[i][j-1]
         moves += 1
+    moves_history.append([row[:] for row in board])  # Copier une nouvelle liste de board dans moves_history
     create_board()
 
 
-shuffle_button = tk.Button(root, text="Mélanger", command=shuffle_board, bg ="DarkOrchid1")
+
+
+shuffle_button = tk.Button(root, text="Mélanger", command=shuffle_board, bg ="DarkOrchid1") #bouton pour melanger
 shuffle_button.pack()
-cnv.bind("<Button-1>", move_tile)
+cnv.bind("<Button-1>", move_tile) #bouton qui reconnait le clic de la souris 
+undo_button = tk.Button(root, text="Annuler", command=undo_move, bg="DarkOrchid1")# bouton pour annuler
+undo_button.pack()
+
 create_board()
 root.mainloop()
