@@ -50,6 +50,10 @@ def create_board():
                 cnv.create_rectangle(A, B, fill="gray85")
     if len(moves_history) == 0:
         moves_history.append([row[:] for row in board]) # Ajout de l'état initial de la planche
+    if board == win:
+    game_over = True
+    show_win_message()
+
 
 # Fonction pour annuler le dernier mouvement
 def undo_move():
@@ -122,7 +126,16 @@ def move_tile(event):
     moves_history.append([row[:] for row in board])  # Copier une nouvelle liste de board dans moves_history
     create_board()
 
+#Fonction bravo 
+
+def show_win_message():
+    global game_over
+    game_over = True
+    cnv.create_text(200, 200, text="Bravo, tu as gagné !!!", fill="gray10", font=("Arial", 20, "bold"))
+
+
 #Boutons et autres commandes 
+
 shuffle_button = tk.Button(root, text="Mélanger", command=shuffle_board, bg ="DarkOrchid1") #bouton pour melanger
 shuffle_button.pack()
 cnv.bind("<Button-1>", move_tile) #bouton qui reconnait le clic de la souris 
