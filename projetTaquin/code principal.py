@@ -82,17 +82,20 @@ def move(direction):
 
     create_board() 
 
-# Fonction pour lier les événements de clic de souris à la fonction move()
-def bind_keys():
-    cnv.bind_all("<Button-1>", lambda event: move("left") if event.x < 100 and event.y >= 100 and event.y < 300
-                                              else move("right") if event.x >= 300 and event.y >= 100 and event.y < 300
-                                              else move("up") if event.y < 100 and event.x >= 100 and event.x < 300
-                                              else move("down") if event.y >= 300 and event.x >= 100 and event.x < 300
-                                              else None)
+# Fonction pour gérer les événements clavier
+def key_pressed(event):
+    if event.keysym == "Up":
+        move("up")
+    elif event.keysym == "Down":
+        move("down")
+    elif event.keysym == "Left":
+        move("left")
+    elif event.keysym == "Right":
+        move("right")
 
+root.bind("<KeyPress>", key_pressed)
+root.focus_set()
 
-
-bind_keys()
 create_board()
 root.mainloop()
 
