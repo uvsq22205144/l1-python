@@ -122,8 +122,7 @@ def move_tile(event):
     moves_history.append([row[:] for row in board])  # Copier une nouvelle liste de board dans moves_history
     create_board()
 
-        
-
+#Boutons et autres commandes 
 shuffle_button = tk.Button(root, text="Mélanger", command=shuffle_board, bg ="DarkOrchid1") #bouton pour melanger
 shuffle_button.pack()
 cnv.bind("<Button-1>", move_tile) #bouton qui reconnait le clic de la souris 
