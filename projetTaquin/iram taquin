@@ -59,29 +59,29 @@ can.delete(texte)   # type: ignore
 # identifier les tuiles
 
 def get_tile(row, col):
-    """Get the tile value at the given position"""
+    """mettre la valeur de la tuille dans la case"""
     return board[row][col]
 
 def set_tile(row, col, value):
-    """mettre la valeur de la position """
+    """mettre la valeur de la position  """
     board[row][col] = value
 
 
-
+##### les deux fonctions suivants marchent pas****
 def is_valid_move(row,col):
     global empty_pos
     if row < 0 or row >= t or col < 0 or col >= t:
-        return False  # Out of bounds
+        return False  # 
     if (row == empty_pos[0] and abs(col - empty_pos[1]) == 1) or \
        (col == empty_pos[1] and abs(row - empty_pos[0]) == 1):
-        return True  # Adjacent to empty tile
+        return True  # avancer a la case vide
     return False
 
 def move_tile(row, col):
-    """Move the tile to the empty position"""
+    """"""
     global empty_pos
     if is_valid_move(row, col):
-        # Swap the tiles
+        #echanger 
         set_tile(empty_pos[0], empty_pos[1], get_tile(row, col))
         set_tile(row, col, 0)
         empty_pos = (row, col)
