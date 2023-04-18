@@ -31,26 +31,9 @@ Il nous a été demandé de fournir une interface graphique permettant de jouer 
 * sauvegarder une partie en cours puis de la recharger;
 * revenir en arrière, c’est-à-dire annuler des déplacements de carrés
 
-### * Explication du code 
+## * Utilisation du programme 
 
 
 
-* explot (test de `matplotlib`)
-  
-* Kata _Fizzbuzz_ (avec tests unitaires)
- 
-* Interface graphique (test de `tkinter`)
 
-* Notebook Jupyter
-  
-
-### Faire un exercic
-
-
-### Faire un exercice dans un notebook
-
-
-### Sauvegarder les changements sur son compte `github` (via l'interface graphique VSCode)
-
-
-### Remarque
+### Sources et aides du projet 
