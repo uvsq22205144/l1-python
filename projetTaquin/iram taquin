@@ -9,7 +9,7 @@ import random
 import tkinter.messagebox as tkm
 
 root= tk.Tk()
-
+moves=0
 
 root.geometry("500x500")
 root.title("my taquin")
