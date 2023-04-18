@@ -13,7 +13,7 @@ qui contient un emplacement vide. Un carré ne peut coulisser que si l’emplace
 #### L’objectif est de déplacer les carrés de manière à obtenir la configuration donnée à la figure 1 : 
 
 
-<img src="https://raw.githubusercontent.com/uvsq22205144/l1-python/master/projetTaquin/IMG_2323.jpg" alt="taquin" width="100" height="100">
+<img src="https://raw.githubusercontent.com/uvsq22205144/l1-python/master/projetTaquin/IMG_2323.jpg" alt="taquin" width="200" height="200">
 
 
 
@@ -21,7 +21,7 @@ En général, le jeu démarre à partir d’une configuration choisie au hasard 
 faut noter que certaines configurations de départ n’admettent pas de solution. 
 
 
-![taquin mélangé](https://raw.githubusercontent.com/uvsq22205144/l1-python/master/projetTaquin/IMG_2324.jpg)
+<img src="https://raw.githubusercontent.com/uvsq22205144/l1-python/master/projetTaquin/IMG_2324.jpg" alt="taquin" width="200" height="200">
 
 
 Il nous a été demandé de fournir une interface graphique permettant de jouer au jeu du taquin. La configuration de départ doit être choisie au hasard, mais la case libre doit être en bas à droite. L’interface graphique est devait être Tkinter
