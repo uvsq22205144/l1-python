@@ -31,7 +31,7 @@ faut noter que certaines configurations de départ n’admettent pas de solution
 * Notebook Jupyter
   
 
-### Faire un exercice
+### Faire un exercic
 
 
 ### Faire un exercice dans un notebook
