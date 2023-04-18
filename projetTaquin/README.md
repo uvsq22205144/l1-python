@@ -17,12 +17,13 @@ qui contient un emplacement vide. Un carré ne peut coulisser que si l’emplace
 
 
 
-En général, le jeu démarre à partir d’une configuration choisie au hasard comme illustré à la ###figure 2. Il
+En général, le jeu démarre à partir d’une configuration choisie au hasard comme illustré à la figure 2. Il
 faut noter que certaines configurations de départ n’admettent pas de solution. 
 
 
 <img src="https://raw.githubusercontent.com/uvsq22205144/l1-python/master/projetTaquin/IMG_2324.jpg" alt="taquin" width="250" height="250">
 
+### Figure 2
 
 Il nous a été demandé de fournir une interface graphique permettant de jouer au jeu du taquin. La configuration de départ doit être choisie au hasard, mais la case libre doit être en bas à droite. L’interface graphique est devait être Tkinter
 
