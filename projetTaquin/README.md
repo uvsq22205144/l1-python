@@ -17,7 +17,7 @@ qui contient un emplacement vide. Un carré ne peut coulisser que si l’emplace
 
 
 
-En général, le jeu démarre à partir d’une configuration choisie au hasard comme illustré à la figure 2. Il
+En général, le jeu démarre à partir d’une configuration choisie au hasard comme illustré à la ###figure 2. Il
 faut noter que certaines configurations de départ n’admettent pas de solution. 
 
 
