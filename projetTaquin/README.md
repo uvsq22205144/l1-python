@@ -12,7 +12,7 @@ Le Taquin est un puzzle constitué de 15 carrés numérotés de 1 à 15 qui peuv
 qui contient un emplacement vide. Un carré ne peut coulisser que si l’emplacement voisin dans la direction choisie est vide.
 #### L’objectif est de déplacer les carrés de manière à obtenir la configuration donnée à la figure 1 : 
 
-                             ![taquin](C:\Users\EndUser\Desktop\l1-python\projetTaquin\IMG_2323.jpg)
+                             ![taquin](projetTaquin\IMG_2323.jpg)
 
 
 En général, le jeu démarre à partir d’une configuration choisie au hasard comme illustré à la figure 2. Il
