@@ -6,7 +6,7 @@ import tkinter as tk
 import random 
 
 
-
+import tkinter.messagebox as tkm
 
 root= tk.Tk()
 
@@ -87,15 +87,6 @@ def move_tile(row, col):
         empty_pos = (row, col)
 
 
-def solve():
-
-    global s 
-
-    return solve
-
-
-def recuperation(): 
-    return recuperation
 
 def melanger ():
     return melanger 
@@ -104,7 +95,30 @@ def retour ():
     return retour 
 
 def save():
-    return save
+    """copie la matrice de la partie dans un fichier text."""
+    global text, manche
+    if text.get() == "":
+        tkm.showwarning("attention", "veiller entré un nom à la sauvegarde.")
+        return
+    fic = open(text.get()+".txt", "w")
+    fic.write(str(len(board)) + "\n")
+    fic.write(str(moves) + "\n")
+    for i in range(len(board)):
+        for j in range(len(board)):
+            fic.write(str(board[i][j][0]) + " " + str(board[i][j][1]) +
+                      " " + str(is_valid_move[i][j]) + "\n")
+    fic.close()
+    
+
+def sauvegarde():
+    """Sauvegarde la config courante dans le fichier sauvegarde"""
+    fic = open("sauvegarde", "w")
+    fic.write(str(t)+"\n")
+    for i in range(1, t+1):
+        for j in range(1, t+1):
+            fic.write(str(moves[i][j]))
+            fic.write("\n")
+    
 global puzzl , s 
 
 puzzl=(board,can)
@@ -113,7 +127,7 @@ btn1=tk.Button(text='shake',command=melanger)
 #btn2=tk.Button(text='resoudre',command=solve)
 btn3=tk.Button(text='recuperation',command=retour)
 
-#btn4=tk.Button(text='sauvgarder', command= save)
+btn4=tk.Button(text='sauvgarder', command= sauvegarder)
 btn5=tk.Button(text='Retour',command=retour)
 
 btn1.place(x=20,y=450)
