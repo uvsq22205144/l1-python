@@ -26,13 +26,14 @@ faut noter que certaines configurations de départ n’admettent pas de solution
 
 Il nous a été demandé de fournir une interface graphique permettant de jouer au jeu du taquin. La configuration de départ doit être choisie au hasard, mais la case libre doit être en bas à droite. L’interface graphique est devait être Tkinter
 
-#### Notre programme doit également permettre de :
+##### Notre programme doit également permettre de :
 
 * sauvegarder une partie en cours puis de la recharger;
 * revenir en arrière, c’est-à-dire annuler des déplacements de carrés
 
 ### * Explication du code 
-* Hello
+
+
 
 * explot (test de `matplotlib`)
   
