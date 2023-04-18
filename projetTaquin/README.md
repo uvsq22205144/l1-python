@@ -7,17 +7,25 @@
 
 
 ### * Explications des règles du Taquin
+
 Le Taquin est un puzzle constitué de 15 carrés numérotés de 1 à 15 qui peuvent coulisser horizontalement et verticalement à l’intérieur d’un cadre carré
 qui contient un emplacement vide. Un carré ne peut coulisser que si l’emplacement voisin dans la direction choisie est vide.
-L’objectif est de déplacer les carrés de manière à obtenir la configuration donnée à la figure 1 : 
+#### L’objectif est de déplacer les carrés de manière à obtenir la configuration donnée à la figure 1 : 
 
-                                              ![taquin](.l1-python/projetTaquin/IMG_2323.png)
+                             ![taquin](C:\Users\EndUser\Desktop\l1-python\projetTaquin\IMG_2323.jpg)
 
 
 En général, le jeu démarre à partir d’une configuration choisie au hasard comme illustré à la figure 2. Il
 faut noter que certaines configurations de départ n’admettent pas de solution. 
 
+                             ![taquin](C:\Users\EndUser\Desktop\l1-python\projetTaquin\IMG_2324.jpg)  
 
+Il nous a été demandé de fournir une interface graphique permettant de jouer au jeu du taquin. La configuration de départ doit être choisie au hasard, mais la case libre doit être en bas à droite. L’interface graphique est devait être Tkinter
+
+#### Notre programme doit également permettre de :
+
+* sauvegarder une partie en cours puis de la recharger;
+* revenir en arrière, c’est-à-dire annuler des déplacements de carrés
 
 ### * Explication du code 
 * Hello
