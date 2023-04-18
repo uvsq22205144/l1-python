@@ -29,7 +29,7 @@ def is_solvable(board):
         return True
     else:
         return False
-
+        
 # Fonction pour créer le plateau de jeu
 def create_board():
     global misplaced, board, moves_history
@@ -51,8 +51,8 @@ def create_board():
     if len(moves_history) == 0:
         moves_history.append([row[:] for row in board]) # Ajout de l'état initial de la planche
     if board == win:
-    game_over = True
-    show_win_message()
+        show_win_message()
+
 
 
 # Fonction pour annuler le dernier mouvement
