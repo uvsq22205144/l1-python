@@ -54,7 +54,6 @@ def create_board():
         show_win_message()
 
 
-
 # Fonction pour annuler le dernier mouvement
 def undo_move():
     global board, moves, moves_history
@@ -133,7 +132,16 @@ def show_win_message():
     game_over = True
     cnv.create_text(200, 200, text="Bravo, tu as gagné !!!", fill="gray10", font=("Arial", 20, "bold"))
 
-
+#Fonction sauvegarde Iram 
+def save():
+    """Sauvegarde la config courante dans le fichier sauvegarde"""
+    fic = open("sauvegarde", "w")
+    fic.write(str(t)+"\n")
+    for i in range(1, t+1):
+        for j in range(1, t+1):
+            fic.write(str(moves[i][j]))
+            fic.write("\n")
+    
 #Boutons et autres commandes 
 
 shuffle_button = tk.Button(root, text="Mélanger", command=shuffle_board, bg ="DarkOrchid1") #bouton pour melanger
@@ -141,8 +149,10 @@ shuffle_button.pack()
 cnv.bind("<Button-1>", move_tile) #bouton qui reconnait le clic de la souris 
 undo_button = tk.Button(root, text="Annuler", command=undo_move, bg="DarkOrchid1")# bouton pour annuler
 undo_button.pack()
-log_text = tk.Text(root, width=50, height=15)
+log_text = tk.Text(root, width=50, height=10)
 log_text.pack()
+save_button=tk.Button(text='Sauvegarder', command=save, bg="DarkOrchid1")
+save_button.pack()
 
 create_board()
 root.mainloop()
