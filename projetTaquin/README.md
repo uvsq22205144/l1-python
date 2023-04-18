@@ -12,14 +12,17 @@ Le Taquin est un puzzle constitué de 15 carrés numérotés de 1 à 15 qui peuv
 qui contient un emplacement vide. Un carré ne peut coulisser que si l’emplacement voisin dans la direction choisie est vide.
 #### L’objectif est de déplacer les carrés de manière à obtenir la configuration donnée à la figure 1 : 
 
-                             ![taquin](https://raw.githubusercontent.com/uvsq22205144/l1-python/master/projetTaquin/IMG_2323.jpg)
-)
+
+![taquin](https://raw.githubusercontent.com/uvsq22205144/l1-python/master/projetTaquin/IMG_2323.jpg)
+
 
 
 En général, le jeu démarre à partir d’une configuration choisie au hasard comme illustré à la figure 2. Il
 faut noter que certaines configurations de départ n’admettent pas de solution. 
 
-                             ![taquin mélangé](https://raw.githubusercontent.com/uvsq22205144/l1-python/master/projetTaquin/IMG_2324.jpg)
+
+![taquin mélangé](https://raw.githubusercontent.com/uvsq22205144/l1-python/master/projetTaquin/IMG_2324.jpg)
+
 
 Il nous a été demandé de fournir une interface graphique permettant de jouer au jeu du taquin. La configuration de départ doit être choisie au hasard, mais la case libre doit être en bas à droite. L’interface graphique est devait être Tkinter
 
