@@ -37,3 +37,7 @@ Il nous a été demandé de fournir une interface graphique permettant de jouer 
 
 
 ### Sources et aides du projet 
+
+* La fonction 'create_board()' a été réussi grâce à l'aide de ce site : http://pascal.ortiz.free.fr/contents/tkinter/projets_tkinter/taquin/taquin.html pour la création d'une grille de jeu esthétique. 
+* Ce même site nous a aussi aidé à comprendre le mouvement des tuiles ce qui nous a permit de fire notre propre fonction 'move_tile(event)'
+
