@@ -13,7 +13,7 @@ qui contient un emplacement vide. Un carré ne peut coulisser que si l’emplace
 #### L’objectif est de déplacer les carrés de manière à obtenir la configuration donnée à la figure 1 : 
 
 
-![taquin](https://raw.githubusercontent.com/uvsq22205144/l1-python/master/projetTaquin/IMG_2323.jpg)
+<img src="https://raw.githubusercontent.com/uvsq22205144/l1-python/master/projetTaquin/IMG_2323.jpg" alt="taquin" width="100" height="100">
 
 
 
