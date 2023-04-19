@@ -25,7 +25,7 @@ faut noter que certaines configurations de départ n’admettent pas de solution
 
 ### Figure 2
 
-Il nous a été demandé de fournir une interface graphique permettant de jouer au jeu du taquin. La configuration de départ doit être choisie au hasard, mais la case libre doit être en bas à droite. L’interface graphique est devait être Tkinter
+Il nous a été demandé de fournir une interface graphique permettant de jouer au jeu du taquin. La configuration de départ doit être choisie au hasard, mais la case libre doit être en bas à droite. L’interface graphique devait être Tkinter.
 
 ##### Notre programme doit également permettre de :
 
