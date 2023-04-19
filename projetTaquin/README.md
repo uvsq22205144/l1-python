@@ -34,7 +34,18 @@ Il nous a été demandé de fournir une interface graphique permettant de jouer 
 
 ## * Utilisation du programme 
 
+##### Tout d'abord, création et initialisation d'une fenêtre et d'un canva (interface graphique : Tkinter)
 
+On commence avec la création d'une fenêtre qu'on nomme "Jeu du Taquin" puis le plateau de jeu est défini comme une liste de listes 'board' contenant des entiers et un None (qui est notre case vide). 
+Un objet Canvas est créé avec une taille de 400 x 400 et ajouté à la fenêtre principale à l'aide de la méthode pack().
+
+On continue avec la création de la première fonction 'create_board' initialiser la grille de jeu et les tuiles du Taquin on a définit la police de caractères utilisée pour les chiffres dans le plateau de jeu, c'est Arial en taille 27 et en gras.
+
+##### Mouvements des tuiles 
+
+La fonction 'move_tile(event)' permet de déplacer une tuile en fonction du clic sur le canvas. 
+
+'create_board()': appelle la fonction create_board() pour mettre à jour l'affichage de la grille de jeu avec les modifs des différents déplacements.
 
 
 ## * Sources et aides du projet 
