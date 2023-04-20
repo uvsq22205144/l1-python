@@ -1,4 +1,4 @@
-import tkinter as tk
+import tkinter as tk # Librairie Tkinter
 import random
 
 # Création de la fenêtre principale
