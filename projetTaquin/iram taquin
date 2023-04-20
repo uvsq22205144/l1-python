@@ -122,6 +122,7 @@ def save():
     
 N= len(board)
 # verifier et enregistrer les derniers mouvements (positions des tuiles) 
+# on peut creer une fontion qui compte le nombre de fois ou lees tuiles ont bouger ' moves+=1 ' et enregistrer chaque mouvement dans un fichier... 
 
 def sauvegarde():
     """Sauvegarde la config courante dans le fichier sauvegarde"""
@@ -154,7 +155,7 @@ def sauvegarde():
     return config
     
 
-
+# 
 global puzzl
 
 puzzl=(board,can)
@@ -177,4 +178,4 @@ btn5.place(x=440,y=450)
 root.mainloop()
 
 
-# on peut creer des images dans le canvas qui peuvent bouger 
+
