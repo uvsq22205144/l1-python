@@ -121,6 +121,8 @@ def save():
     fic.close()
     
 N= len(board)
+# verifier et enregistrer les derniers mouvements (positions des tuiles) 
+
 def sauvegarde():
     """Sauvegarde la config courante dans le fichier sauvegarde"""
     fic = open("sauvegarde", "w")
