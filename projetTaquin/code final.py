@@ -135,6 +135,7 @@ def show_win_message():
 #Fonction sauvegarde Iram 
 entry= tk.Entry(root)
 entry.pack()
+
 def save_config():
     config = entry.get()
     file_path = filedialog.asksaveasfilename(defaultextension=".txt")
@@ -142,9 +143,7 @@ def save_config():
         with open(file_path, "w") as file:
             file.write(config)
 
-# Créer un bouton pour sauvegarder la configuration
-save_button = tk.Button(root, text="Sauvegarder", command=save_config)
-save_button.pack()
+
 
 # Créer une fonction pour afficher la configuration à partir d'un fichier
 def load_config():
@@ -153,11 +152,7 @@ def load_config():
         with open(file_path, "r") as file:
             config = file.read()
             tk.messagebox.showinfo("Configuration", config)
-
-# Créer un bouton pour afficher la configuration
-load_button = tk.Button(root, text="Afficher", command=load_config)
-load_button.pack()
-
+#fontion load pas terminé...
 
     
 #Boutons et autres commandes 
@@ -169,8 +164,11 @@ undo_button = tk.Button(root, text="Annuler", command=undo_move, bg="DarkOrchid1
 undo_button.pack()
 log_text = tk.Text(root, width=50, height=10)
 log_text.pack()
-save_button=tk.Button(text='Sauvegarder', command=save, bg="DarkOrchid1")
+save_button = tk.Button(root, text="Sauvegarder", command=save_config)
 save_button.pack()
+load_button = tk.Button(root, text="Afficher", command=load_config)
+load_button.pack()
+
 
 create_board()
 root.mainloop()
