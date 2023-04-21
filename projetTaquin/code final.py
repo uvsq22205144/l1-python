@@ -170,5 +170,6 @@ load_button = tk.Button(root, text="Afficher", command=load_config)
 load_button.pack()
 
 
+
 create_board()
 root.mainloop()
