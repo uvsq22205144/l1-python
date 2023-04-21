@@ -1,6 +1,6 @@
 import tkinter as tk # Librairie Tkinter
 import random
-
+from tkinter import filedialog
 # Création de la fenêtre principale
 root = tk.Tk()
 root.title("Jeu du Taquin")
@@ -133,14 +133,32 @@ def show_win_message():
     cnv.create_text(200, 200, text="Bravo, tu as gagné !!!", fill="gray10", font=("Arial", 20, "bold"))
 
 #Fonction sauvegarde Iram 
-def save():
-    """Sauvegarde la config courante dans le fichier sauvegarde"""
-    fic = open("sauvegarde", "w")
-    fic.write(str(t)+"\n")
-    for i in range(1, t+1):
-        for j in range(1, t+1):
-            fic.write(str(moves[i][j]))
-            fic.write("\n")
+entry= tk.Entry(root)
+entry.pack()
+def save_config():
+    config = entry.get()
+    file_path = filedialog.asksaveasfilename(defaultextension=".txt")
+    if file_path:
+        with open(file_path, "w") as file:
+            file.write(config)
+
+# Créer un bouton pour sauvegarder la configuration
+save_button = tk.Button(root, text="Sauvegarder", command=save_config)
+save_button.pack()
+
+# Créer une fonction pour afficher la configuration à partir d'un fichier
+def load_config():
+    file_path = filedialog.askopenfilename(defaultextension=".txt")
+    if file_path:
+        with open(file_path, "r") as file:
+            config = file.read()
+            tk.messagebox.showinfo("Configuration", config)
+
+# Créer un bouton pour afficher la configuration
+load_button = tk.Button(root, text="Afficher", command=load_config)
+load_button.pack()
+
+
     
 #Boutons et autres commandes 
 
