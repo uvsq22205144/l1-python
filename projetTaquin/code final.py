@@ -133,17 +133,12 @@ def show_win_message():
     cnv.create_text(200, 200, text="Bravo, tu as gagné !!!", fill="gray10", font=("Arial", 20, "bold"))
 
 #Fonction sauvegarde Iram 
-entry= tk.Entry(root)
-entry.pack()
-
 def save_config():
     config = entry.get()
     file_path = filedialog.asksaveasfilename(defaultextension=".txt")
     if file_path:
         with open(file_path, "w") as file:
             file.write(config)
-
-
 
 # Créer une fonction pour afficher la configuration à partir d'un fichier
 def load_config():
@@ -164,11 +159,12 @@ undo_button = tk.Button(root, text="Annuler", command=undo_move, bg="DarkOrchid1
 undo_button.pack()
 log_text = tk.Text(root, width=50, height=10)
 log_text.pack()
+entry= tk.Entry(root)
+entry.pack()
 save_button = tk.Button(root, text="Sauvegarder", command=save_config)
 save_button.pack()
 load_button = tk.Button(root, text="Afficher", command=load_config)
 load_button.pack()
-
 
 
 create_board()
