@@ -1,6 +1,7 @@
-import tkinter as tk # Librairie Tkinter
+import tkinter as tk 
 import random
 from tkinter import filedialog
+
 # Création de la fenêtre principale
 root = tk.Tk()
 root.title("Jeu du Taquin")
@@ -126,13 +127,12 @@ def move_tile(event):
     create_board()
 
 #Fonction bravo 
-
 def show_win_message():
     global game_over
     game_over = True
     cnv.create_text(200, 200, text="Bravo, tu as gagné !!!", fill="gray10", font=("Arial", 20, "bold"))
 
-#Fonction sauvegarde Iram 
+#Fonction sauvegarde
 def save_config():
     config = entry.get()
     file_path = filedialog.asksaveasfilename(defaultextension=".txt")
@@ -140,7 +140,7 @@ def save_config():
         with open(file_path, "w") as file:
             file.write(config)
 
-# Créer une fonction pour afficher la configuration à partir d'un fichier
+# Fonction pour recharger une partie
 def load_config():
     file_path = filedialog.askopenfilename(defaultextension=".txt")
     if file_path:
