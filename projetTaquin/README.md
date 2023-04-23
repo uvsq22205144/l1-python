@@ -1,12 +1,12 @@
 # Projet taquin
 
-## * Biologie Informatique TD2, groupe projet 6 : AZZOPARDI Laly, DERBAL Amina & MADANI FOUATIH Iram
+## Biologie Informatique TD2, groupe projet 6 : AZZOPARDI Laly, DERBAL Amina & MADANI FOUATIH Iram
 
 
 ### Code source disponible sur `https://github.com/uvsq22205144/l1-python`
 
 
-### * Explications des règles du Taquin
+### Explications des règles du Taquin
 
 Le Taquin est un puzzle constitué de 15 carrés numérotés de 1 à 15 qui peuvent coulisser horizontalement et verticalement à l’intérieur d’un cadre carré
 qui contient un emplacement vide. Un carré ne peut coulisser que si l’emplacement voisin dans la direction choisie est vide.
@@ -32,7 +32,7 @@ Il nous a été demandé de fournir une interface graphique permettant de jouer 
 * sauvegarder une partie en cours puis de la recharger;
 * revenir en arrière, c’est-à-dire annuler des déplacements de carrés
 
-## * Utilisation du programme 
+##  Utilisation du programme 
 
 ##### Tout d'abord, création et initialisation d'une fenêtre et d'un canva (interface graphique : Tkinter)
 
@@ -48,7 +48,7 @@ La fonction 'move_tile(event)' permet de déplacer une tuile en fonction du clic
 'create_board()': appelle la fonction create_board() pour mettre à jour l'affichage de la grille de jeu avec les modifs des différents déplacements.
 
 
-## * Sources et aides du projet 
+##  Sources et aides du projet 
 
 * La fonction 'create_board()' a été réussi grâce à l'aide de ce site : http://pascal.ortiz.free.fr/contents/tkinter/projets_tkinter/taquin/taquin.html pour la création d'une grille de jeu esthétique. 
 * Ce même site nous a aussi aidé à comprendre le mouvement des tuiles ce qui nous a permit de faire notre propre fonction 'move_tile(event)'
