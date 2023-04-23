@@ -154,15 +154,21 @@ def load_config():
 
 shuffle_button = tk.Button(root, text="Mélanger", command=shuffle_board, bg ="DarkOrchid1") #bouton pour melanger
 shuffle_button.pack()
+
 cnv.bind("<Button-1>", move_tile) #bouton qui reconnait le clic de la souris 
+
 undo_button = tk.Button(root, text="Annuler", command=undo_move, bg="DarkOrchid1")# bouton pour annuler
 undo_button.pack()
+
 log_text = tk.Text(root, width=50, height=10)
 log_text.pack()
+
 entry= tk.Entry(root)
 entry.pack()
+
 save_button = tk.Button(root, text="Sauvegarder", command=save_config)
 save_button.pack()
+
 load_button = tk.Button(root, text="Afficher", command=load_config)
 load_button.pack()
 
