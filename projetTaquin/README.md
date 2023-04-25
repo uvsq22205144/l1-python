@@ -34,19 +34,60 @@ Il nous a été demandé de fournir une interface graphique permettant de jouer 
 
 ##  Utilisation du programme 
 
-##### Tout d'abord, création et initialisation d'une fenêtre et d'un canva (interface graphique : Tkinter)
 
-On commence avec la création d'une fenêtre qu'on nomme "Jeu du Taquin" puis le plateau de jeu est défini comme une liste de listes 'board' contenant des entiers et un None (qui est notre case vide). 
-Un objet Canvas est créé avec une taille de 400 x 400 et ajouté à la fenêtre principale à l'aide de la méthode pack().
+・Def is_solvable(): 
 
-On continue avec la création de la première fonction 'create_board' initialiser la grille de jeu et les tuiles du Taquin on a définit la police de caractères utilisée pour les chiffres dans le plateau de jeu, c'est Arial en taille 27 et en gras.
+→Cette fonction vérifie si un jeu de taquin est résoluble ou non en comptant le nombre d'inversions dans le tableau.
+On commence par aplatir le tableau en une seule liste pour faciliter le comptage des inversions puis on compares les éléments entre eux. Une inversion se produit si pour chaque pairs d’elements (i,j) ou indice de l’élément i < indice élément j, l’élément i est plus grand que l’element j. 
+Si le nombre d'inversions est pair, cela signifie que le puzzle est résoluble.
 
-##### Mouvements des tuiles 
 
-La fonction 'move_tile(event)' permet de déplacer une tuile en fonction du clic sur le canvas. 
 
-'create_board()': appelle la fonction create_board() pour mettre à jour l'affichage de la grille de jeu avec les modifs des différents déplacements.
+・Def create_board (): 
 
+→cette fonction a pour but de créer une grille du jeu, on boucle sur toutes les lignes et colonnes de la grille (4x4) et crée un rectangle à chaque emplacement.
+le code écrit le numéro de la case à l'intérieur du rectangle et vérifie si le numéro correspond à sa position dans la grille gagnante (win)
+
+
+
+・Def undo_move():
+
+→Cette fonction permet d'annuler le dernier mouvement effectué dans le jeu de taquin.
+Cette fonction vérifie le nombre de mouvements jusqu'à présent et si ce nombre est égale a 0, cela signifie qu'il n'y a aucun mouvement à annuler. Sinon, la fonction recherche l'avant-dernier élément dans moves_history et le stock dans une liste. Il supprime le dernier element et met a jour le board. 
+
+
+
+・Def shuffle_board():
+
+→la fonction verifier l’état du plateau est renvoie si ce dernier est resoluble ou pas, puis elle recherche la position de la case vide en assignant les coordonnées de cette case à la variable empty_pos.
+La fonction place tout les element du plateau a part la case vide dans une liste en utilisant une boucle puis melanger tout les elements de cette liste. 
+Ensuite la fonction place touts les elements de la liste mélanger dans l’ordre dans toutes les positions du plateau sauf la position vide. 
+La case vide est placée a la dernière case
+La fonction create_board est appelée pour afficher le nouveau plateau melanger. 
+
+
+
+・Def move_tile(): 
+
+→ cette fonction est appelée a chaque fois qu’on clique sur une tuile du plateau, elle vérifie si la position de la tuile cliquée est échangeable avec la position de la case vide. 
+Cette fonction met a jour les variables moves_history en plaçant la nouvelle liste dedans. 
+La fonction create_board est appelée pour afficher le nouveau plateau avec les positions échanger. 
+
+
+
+・def show_win_message():
+
+→La fonction "show_win_message" est appelée lorsque le joueur réussit à résoudre le puzzle et aligne tous les numéros en ordre croissant de gauche à droite et de haut en bas.
+
+
+
+・Def save_config():
+
+→La fonction "save_config()" récupère la configuration de la zone de texte, demande à l'utilisateur de sélectionner un emplacement de fichier et écrit la configuration dans le fichier sélectionné. 
+
+・Def load_config():
+
+→La fonction "load_config()" demande à l'utilisateur de sélectionner un fichier de configuration et affiche la configuration dans une boîte de dialogue.
 
 ##  Sources et aides du projet 
 
