@@ -142,12 +142,22 @@ def save_config():
 
 # Fonction pour recharger une partie
 def load_config():
+     # ouverir le fichier 
     file_path = filedialog.askopenfilename(defaultextension=".txt")
     if file_path:
+        # lire la configuration dupuis le fichier 
         with open(file_path, "r") as file:
-            config = file.read()
-            tk.messagebox.showinfo("Configuration", config)
-#fontion load pas terminé...
+            config_data = file.read()
+        # mettre les donnees dans une liste 
+        config = [int(x) for x in config_data.split()]
+        
+        return config
+    else:
+        # ne rien retournez si le fichier est vide 
+        return []
+
+taquin_board = load_config()
+
 
     
 #Boutons et autres commandes 
