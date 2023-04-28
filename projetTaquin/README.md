@@ -1,6 +1,6 @@
 # Projet taquin
 
-## Biologie Informatique TD2, groupe projet 6 : AZZOPARDI Laly, DERBAL Amina & MADANI FOUATIH Iram
+## Biologie Informatique TD2, groupe projet 7 : AZZOPARDI Laly, DERBAL Amina & MADANI FOUATIH Iram
 
 
 ### Code source disponible sur `https://github.com/uvsq22205144/l1-python`
