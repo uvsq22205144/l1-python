@@ -159,10 +159,8 @@ def load_config():
         # ne rien retournez si le fichier est vide 
         return []
 
-#taquin_board = load_config()
 
 
-    
 #Boutons et autres commandes 
 
 shuffle_button = tk.Button(root, text="Mélanger", command=shuffle_board, bg ="DarkOrchid1") #bouton pour melanger
