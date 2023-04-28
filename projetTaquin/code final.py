@@ -145,7 +145,7 @@ def save_config():
 
 # Fonction pour recharger une partie
 def load_config():
-     # ouverir le fichier 
+     # ouvrir le fichier 
     file_path = filedialog.askopenfilename(defaultextension=".txt")
     if file_path:
         # lire la configuration dupuis le fichier 
