@@ -156,7 +156,7 @@ def load_config():
         # ne rien retournez si le fichier est vide 
         return []
 
-taquin_board = load_config()
+#taquin_board = load_config()
 
 
     
